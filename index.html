@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/input.css">
+    <title>Website project</title>
+</head>
+<script>
+    const loadComponents = (id, url) =>  {
+        fetch(url)
+        .then((response) => response.text())
+        .then((html) => {
+            document.getElementById(id).innerHTML = html;
+        });
+    }
+
+    window.onload = () => {
+        loadComponents('header', 'src/sections/header.html');
+        loadComponents('hero', 'src/sections/hero.html');
+        loadComponents('about', 'src/sections/about.html');
+        loadComponents('services', 'src/sections/services.html');
+        loadComponents('references', 'src/sections/references.html');
+        loadComponents('contact', 'src/sections/contact.html');
+        loadComponents('footer', 'src/sections/footer.html');
+    }
+</script>
+<body>
+    <div id="header"></div>
+    <div id="hero"></div>
+    <div id="about"></div>
+    <div id="services"></div>
+    <div id="references"></div>
+    <div id="contact"></div>
+    <div id="footer"></div>
+</body>
+
+</html>
